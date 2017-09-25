@@ -1,21 +1,21 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">		
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-		<title>Something...</title>	
-	</head>
-	<body>
-		<div class = 'title'>
-			<h1>Hi there!</h1>
-		</div>{% for post in posts %}
-        	<div>
-            		published: {{ post.published_date }}
-            		<h1>{{ post.title }}</h1>
-            		<p>{{ post.text|linebreaksbr }}</p>
-        	</div>
-    		{% endfor %}
+{% load staticfiles %}
+    <html>
+        <head>
+            <title>Something...</title>
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+            <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+	    <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
+        </head>
+        <body>
+            <div class = 'name'>
+                <h1>Elina's coursework</h1>
+            </div>
 
-	</body>
-</html>
+            {% for post in posts %}
+                <div>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+            {% endfor %}
+        </body>
+    </html>
